@@ -10,49 +10,68 @@
 </style>
 {% endblock %}
 {% block main %}
-<h1 class="page-header">Contact</h1>
-  <hr class="hr-primary" />
-{% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul class=flash>
-        {% for message in messages %}
-          <li>{{ message }}</li>
-        {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
-<p>Fill in this form to contact the site owners.</p>
+<h1 class="page-header">Add Profile</h1>
 
- <form action="/contact/", method="POST">
-<!-- <form action="{{ url_for('contact') }}" method="POST"> -->
+ <form action="/profile_form/", method="POST", enctype="multipart/form-data">
   
+  <div class="form-group">
+    <label for="file">Upload your file</label>
+    <input type="file" name="prfile_pic" class="form-control" />
+  </div>
+
   <div class="form-group">
   <div class="clearfix"></div>
   <div class="col-xs-4">
     <label for="firstname">Firstname <em>*</em></p> </label>
     <input type="Name" class="form-control" name="firstname"placeholder="firstname" required="true">
-  </div>
+  </div></div>
+  
+  
   <div class="form-group">
   <div class="clearfix"></div>
 <div class="col-xs-4">
     <label for="lastname">Lastname <em>*</em></label>
-    <input type="lastname" class="form-control" name="lastname" placeholder="lastname" required='true'>
-  </div>
+    <input type="Name" class="form-control" name="lastname" placeholder="lastname" required='true'>
+  </div></div>
+  
   <div>
     <div class="form-group">
     <div class="clearfix"></div>
    <div class="col-xs-4">
-    <label for="subject">Age: <em>*</em></label>
-    <input type="Text" class="form-control" name="subject" placeholder="Subject" required='true'>
-  </div>
+    <label for="Age">Age: <em>*</em></label>
+    <input type="number" min="0" max="200" class="form-control" name="age" placeholder="age" required='true'>
+  </div></div></div>
+  
+  <br><br><br>
+  
+  <div>
+    <div class="form-group">
+    <div class="clearfix"></div>
+   <div class="col-xs-4">
+  <label for="sex">Sex</label>
+    
+  <select name = "Sex">
+    <option value = "female">Female</option>
+    <option value = "male">Male</option>
+  </select>  
+    
+  </div></div></div>
+  
+  
   <div class="form-group">
   <div class="clearfix"></div>
-  <label for="message">Biography: <em>*</em></label>
+  
+  <label for="bio">Biography: <em>*</em></label>
     <br>
-  <textarea name="bio " rows="5" cols="50" "Message" class="form-control" placeholder="Please enter Your bio here"></textarea>
+  <textarea name="bio " rows="5" cols="60" class="form-control" placeholder="Please enter Your bio here" maxlength = "300"></textarea>
   </div>
+  
   <br>
-  <button type="submit" class="btn btn-primary">Submit</button>
+ <button type="submit" class="btn btn-primary" >Submit</button>   
+
+ 
+
+  
   
 </form>
 {% endblock %}

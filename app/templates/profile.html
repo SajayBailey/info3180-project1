@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block main %}
+        <h1 class="page-header">Profile</h1>
+        <div>
+            <img src="{{ url_for('static', filename = 'ditto.jpg') }}" alt = 'test pic'>
+        </div>
+        
+        <div>
+            <p>Sajay Bailey</p>
+            <p>Date: {{ today }}</p>
+            <p>ID Number: 620071031</p>
+            <p>Age: 22</p>
+            <p>Gender: male</p>
+        </div>
+        
+{% endblock %}
